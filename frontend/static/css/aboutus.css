@@ -1,0 +1,41 @@
+/* Styles for the About Us page */
+
+.section-about {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #ff7f50; /* Coral text color */
+}
+
+.about-description {
+    margin-bottom: 40px;
+}
+
+.about-subtitle {
+    font-size: 24px;
+    color: #4682b4; /* Steel blue text color */
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #008080; /* Teal text color */
+    margin-bottom: 20px;
+}
+
+.about-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-item {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #9370db; /* Medium purple text color */
+    margin-bottom: 10px;
+}

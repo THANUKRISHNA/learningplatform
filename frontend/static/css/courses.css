@@ -1,0 +1,58 @@
+/* courses.css */
+
+.course-card {
+    width: 300px; /* Set width of each card */
+    margin-bottom: 20px; /* Add margin at the bottom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    transition: transform 0.3s ease-in-out; /* Add transition effect on hover */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly on hover */
+  }
+  
+  .course-card-img-container {
+    height: 200px; /* Set height for image container */
+    overflow: hidden; /* Hide overflow for smooth movement */
+  }
+  
+  .course-card-img-top {
+    width: 100%; /* Ensure images fill their containers */
+    height: auto; /* Maintain aspect ratio */
+    border-top-left-radius: 8px; /* Rounded corners for the top-left */
+    border-top-right-radius: 8px; /* Rounded corners for the top-right */
+  }
+  
+  .course-card-body {
+    padding: 1rem; /* Add padding inside the card body */
+  }
+  
+  .course-card-title {
+    font-size: 1.25rem; /* Increase font size for card titles */
+    margin-bottom: 0.5rem; /* Add some space below the title */
+  }
+  
+  .course-card-text {
+    font-size: 1rem; /* Set font size for card text */
+  }
+  
+  .course-card-footer {
+    padding: 1rem; /* Add padding inside the card footer */
+    border-top: 1px solid #dee2e6; /* Add border at the top */
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+  }
+  
+  .course-btn {
+    /* No specific positioning needed */
+  }
+  
+  .course-card-title.text-center {
+    margin-bottom: 1rem; /* Add margin below the amount */
+  }
+  

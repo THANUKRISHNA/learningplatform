@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Image Effect</title>
+  <style>
+    #in process of including three.js in my webpage 
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .image-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%; /* Half the width of the screen */
+      height: 50vh; /* Half the height of the screen */
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .content {
+      position: absolute;
+      top: 55vh;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .content h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+    .content p {
+      margin: 10px 0;
+      color: #666;
+    }
+    .card-container {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      width: 300px;
+      height: 200px;
+      margin: 10px;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .card p {
+      margin: 5px 0;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="image-container" id="imageContainer">
+      <img class="image" src="https://via.placeholder.com/800x600" alt="Image">
+    </div>
+    <div class="content">
+      <h1>Additional Content Below</h1>
+      <p>This is some additional content added below the image container. You can add any content here as needed.</p>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <h2>Card 1</h2>
+      <p>This is a card below the content section.</p>
+    </div>
+    <div class="card">
+      <h2>Card 2</h2>
+      <p>This is another card below the content section.</p>
+    </div>
+    <div class="card">
+      <h2>Card 3</h2>
+      <p>This is yet another card below the content section.</p>
+    </div>
+  </div>
+
+  <script>
+    const imageContainer = document.getElementById('imageContainer');
+    let lastScrollY = window.scrollY;
+
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      const diff = scrollY - lastScrollY;
+      lastScrollY = scrollY;
+
+      const scale = Math.max(1 - (scrollY / window.innerHeight) * 0.3, 0.7);
+      const translateX = Math.max(-(scrollY / window.innerHeight) * 50, -25);
+
+      imageContainer.style.transform = `translateX(${translateX}%) scale(${scale})`;
+    }
+
+    window.addEventListener('scroll', handleScroll);
+  </script>
+</body>
+</html>

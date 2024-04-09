@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Compiler</title>
+
+    <script>
+        function main() {
+          const input = document.getElementById("code").value;
+          let output = '';
+
+          try {
+            const worker = new Worker("C:\Users\lenovo\OneDrive\Documents\learningplatform\frontend\template\python-worker.jspath/to/python-worker.js");
+
+
+            worker.onmessage = function(event) {
+      
+              document.getElementById("output").textContent = event.data;
+            };
+
+            
+            worker.postMessage(input);
+          } catch (err) {
+            
+            document.getElementById("output").textContent = err.message;
+          }
+        }
+    </script>
+</head>
+<body>
+    <h1>Python Compiler</h1>
+    <textarea id="code"></textarea>
+    <button onclick="main()">Run Code</button>
+    <pre id="output"></pre>
+    <script src="python-worker.js"></script>
+    
+</body>
+</html>

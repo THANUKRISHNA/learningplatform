@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block content %}
+<body>
+    <div class="container-fluid" >
+        
+            <div class="row mt-5">
+                       <div class="col-md-4 mt-5 mx-auto shadow-lg">
+                               <h3 align="center">User Registration</h3><br>
+                               {% if err %}
+                               <div class="alert alert-danger">
+                                {{err}}
+                               </div>
+                               {% endif %}
+                               {% if success %}
+                               <div class="alert alert-success">
+                                {{success}}
+                               </div>
+                               {% endif %}
+                               <form method="POST">
+                                {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="input1" class="form-label"><strong>Username:</strong></label>
+                                        <input type="text" class="form-control" name="uname" id="input1" placeholder="Enter Username">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input2" class="form-label"><strong>Email:</strong></label>
+                                        <input type="email" class="form-control" name="uemail" id="input2" placeholder="Enter Email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input3" class="form-label"><strong>Password:</strong></label>
+                                        <input type="password" class="form-control" name="upass" id="input3" placeholder="Enter Password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input4" class="form-label"><strong>Confirm Password:</strong></label>
+                                        <input type="password" class="form-control" name="ucpass" id="input4" placeholder="Enter Password again">
+                                    </div>
+                                    <div class="mb-3">
+                                      
+                                         <button type="submit" class="btn btn-primary" >Register</button>
+                                         <a class="anchor" href="{% url 'login' %}">Already a User! Login</a>
+
+                                    </div>
+                        
+                               </form>
+                            
+                       </div>   
+            </div>
+    </div>
+</body>
+{% endblock %}
