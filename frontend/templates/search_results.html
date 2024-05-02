@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2>Search Results for "{{ query }}"</h2>
+  <div class="row mt-3">
+    {% for course in courses %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+          <a href="{% url 'purchase_course' course.id %}" class="btn btn-primary">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>No courses found.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

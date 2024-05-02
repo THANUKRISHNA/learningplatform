@@ -5,11 +5,12 @@
   <img class="image" src="https://cdn.pixabay.com/photo/2016/06/13/07/59/pi-1453836_640.jpg" alt="Image">
 </div>
 
-<div class="explore-section">
+<div class="explore-section" style="background-color: #28a745;">
   <h2>Explore Courses</h2>
   <p>Welcome to our webpage! Explore our wide range of courses and start your learning journey today.</p>
   <a href="{% url 'all_courses' %}" class="btn btn-primary">Explore Courses</a>
 </div>
+
 <div class="container mt-5">
   <h2>New Popular Courses</h2>
   <div class="row mt-3">
@@ -35,6 +36,39 @@
   </div>
 </div>
 
+<div class="container mt-5">
+  <div class="row align-items-center">
+    <div class="col-md-7">
+      <div class="test-yourself">
+        <h2 class="mb-4">Test Yourself</h2>
+        <p>Welcome to our Test Yourself section! Test your knowledge and challenge yourself with our quiz. Choose from a variety of topics and improve your skills. Whether you are preparing for an exam or just curious to learn something new, our quizzes cover a wide range of subjects.</p>
+      </div>
+    </div>
+    <div class="col-md-5 text-center">
+      <a href="{% url 'quiz' %}" class="btn btn-primary">Test Yourself</a>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="wikipedia-search">
+        <h2 class="mb-4">Wikipedia Search</h2>
+        <p>Search for any topic on Wikipedia. Find detailed information and learn more about the subjects that interest you.</p>
+      </div>
+    </div>
+    <div class="col-md-5 text-center">
+      <form method="post" action="{% url 'search' %}">
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="text" id="search_query" name="search_query" class="form-control" placeholder="Search for...">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <div id="myModal" class="modal">
   <div class="modal-content">

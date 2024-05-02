@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Test Yourself</h1>
+  <p>Test your knowledge with the following quiz:</p>
+  <form id="quiz-form">
+    {% csrf_token %}
+    {% for question in questions %}
+      <div class="question">
+        <h3>{{ question.question|safe }}</h3>
+        <ul>
+          {% for option in question.incorrect_answers %}
+            <li>{{ option|safe }}</li>
+          {% endfor %}
+          <li>{{ question.correct_answer|safe }}</li>
+        </ul>
+      </div>
+    {% endfor %}
+  </form>
+  <centre><p><strong> Uncertain about answers! Check your answers online and learn more about each subject!</strong></p></centre>
+{% endblock %}

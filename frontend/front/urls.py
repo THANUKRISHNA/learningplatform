@@ -16,6 +16,9 @@ urlpatterns = [
     path('course_modules/<int:course_id>/modules/', views.course_modules, name='course_modules'),
     path('your-courses/', views.your_courses, name='your_courses'),
     path('all_courses/', views.all_courses, name='all_courses'),
+    path('click/', views.searchnav, name='click'), 
+    path('quiz/', views.quiz, name='quiz'),
+    
 ]
 
 if settings.DEBUG:

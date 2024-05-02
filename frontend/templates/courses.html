@@ -1,19 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form method="post" action="{% url 'search' %}">
-  {% csrf_token %}
-  <label for="search_query">Search:</label>
-  <input type="text" id="search_query" name="search_query">
-  <button type="submit" style="margin-top: 20px;">Search</button>
-</form>
-
 <div class="container mt-5">
   <h2 class="mb-4">Courses</h2>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for course in courses %}
-    <div class="col">
-      <div class="card course-card h-100">
+    <div class="col mb-4">
+      <div class="card course-card h-100 mx-2">
         <div class="course-card-img-container">
           <img src="{{ course.image.url }}" class="card-img-top course-card-img-top" alt="{{ course.title }}">
         </div>

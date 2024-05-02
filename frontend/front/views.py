@@ -10,6 +10,7 @@ from razorpay import Client
 from django.conf import settings
 
 
+
 def home(request):
     popular_courses = Course.objects.all()[:3]
     return render(request, 'home.html', {'popular_courses': popular_courses})
@@ -171,3 +172,19 @@ def your_courses(request):
 def all_courses(request):
     courses = ScrapeCourse.objects.all()
     return render(request, 'all_courses.html', {'courses': courses})
+
+def searchnav(request):
+    query = request.GET.get('q')
+    if query:
+        courses = Course.objects.filter(title__icontains=query)
+    else:
+        courses = Course.objects.none()
+    return render(request, 'search_results.html', {'courses': courses, 'query': query})
+
+def quiz(request):
+    url = 'https://opentdb.com/api.php?amount=10&type=multiple'
+    response = requests.get(url)
+    quiz_data = response.json()
+    questions = quiz_data['results']
+    return render(request, 'quiz.html', {'questions': questions})
+
