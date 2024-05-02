@@ -45,7 +45,7 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'template')],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +119,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,('static'))]
+RAZORPAY_KEY_ID = 'rzp_test_47FqPXf9FYhJjr'
+RAZORPAY_KEY_SECRET = 'ydgcrbvgx09PGkdLt0hwtGto'

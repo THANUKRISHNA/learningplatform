@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2>{{ course.title }} Modules</h2>
+  <div class="row">
+    <div class="col-md-8">
+      {% if modules %}
+        <div class="list-group">
+          {% for module in modules %}
+            <div class="list-group-item">
+              <h5 class="card-title">{{ module.title }}</h5>
+              <p>{{ module.content }}</p>
+              {% if module.video_url %}
+                <p>Video URL: <a href="{{ module.video_url }}" target="_blank">{{ module.video_url }}</a></p>
+              {% endif %}
+              {% if module.notes %}
+                <p>Download Notes: <a href="{{ module.notes.url }}" target="_blank">{{ module.notes }}</a></p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No modules available for this course.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

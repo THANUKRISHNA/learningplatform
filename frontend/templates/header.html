@@ -11,15 +11,18 @@
   <script src="{% static 'js/script.js' %}"></script>
   <script src="{% static 'js/python-worker.js' %}"></script>
   <link href="{% static 'css/courses.css' %}">
-
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
+    <!-- Replacing the img tag with video tag -->
     <a class="navbar-brand" href="{% url 'aboutus' %}">
-        <img src="https://via.placeholder.com/40" alt="Logo" class="d-inline-block align-top">
-      </a>
+      <video autoplay muted loop style="width: 50px;">
+        <source src="https://cdn-icons-mp4.flaticon.com/512/10302/10302972.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
@@ -31,12 +34,14 @@
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-      </li>
-      {% else %}
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
         </li>
-          
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'your_courses' %}">Your Courses</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'register' %}">Register</a>
         </li>

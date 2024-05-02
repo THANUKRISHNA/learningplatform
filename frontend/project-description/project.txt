@@ -1,0 +1,24 @@
+Learning Platform:
+
+The Learning Platform is a project to offer you a wealth of information about courses provided by various universities, 
+coaching institutes, and online learning platforms. Whether you're searching for free courses or exploring paid 
+options, you'll find everything you need right here.
+
+Learning Platform also offers its own courses, designed to help improve our knowledge and skills. 
+With our user-friendly interface, you can easily enroll in courses and access modules to enhance your learning experience.
+
+To make your learning journey  more enriching, I've integrated a Wikipedia search feature. Now, you can research
+any topic of interest right from our platform. Simply enter your search query, and it provide you with a brief 
+description and a link to the corresponding Wikipedia page.
+
+The Learning Platform is built using the latest web technologies. I've used Django for both front-end and back-end development,
+ensuring a seamless user experience. With Bootstrap, CSS, and JavaScript, I've created an intuitive and visually 
+appealing interface.
+
+Understanding that learning is not just about acquiring knowledge but also about testing and applying what you've 
+learned, I'm adding a "Test Yourself" feature. This will allow you to assess your knowledge through quizzes.
+
+I'm also planning to introduce a chatbox feature so you can ask questions and clarify doubts in real-time. 
+Additionally, I'm exploring Three.js to enhance the visual appeal of our website.In the backend, I've set up tables 
+such as User, Courses, Modules, Purchase, User Access, and Scraped Courses to ensure smooth operation and management 
+of data.And I'm also working on an analytical tool using Power BI, which will provide insights into user behavior and preferences based on user details and course enrollment data.

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  body {
+    background-image: url('https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+<div class="container mt-5">
+  <h2>All Courses</h2>
+  <div class="row mt-3">
+    {% for course in courses %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+          <p class="card-text">Amount: {{ course.amount }}</p>
+          <p class="card-text">Number of Modules: {{ course.num_modules }}</p>
+          <a href="{{ course.url }}" class="btn btn-primary stretched-link" target="_blank">View Course</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

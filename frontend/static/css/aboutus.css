@@ -8,7 +8,7 @@
     text-align: center;
     margin-bottom: 40px;
     font-size: 36px;
-    color: #ff7f50; /* Coral text color */
+    color: #0e0604; /* Coral text color */
 }
 
 .about-description {
@@ -17,14 +17,14 @@
 
 .about-subtitle {
     font-size: 24px;
-    color: #4682b4; /* Steel blue text color */
+    color: #000407; /* Steel blue text color */
     margin-bottom: 20px;
 }
 
 .about-text {
     font-size: 16px;
     line-height: 1.6;
-    color: #008080; /* Teal text color */
+    color: #a01a1a; /* Teal text color */
     margin-bottom: 20px;
 }
 
@@ -36,6 +36,6 @@
 .about-item {
     font-size: 16px;
     line-height: 1.6;
-    color: #9370db; /* Medium purple text color */
+    color: #000000a4; /* Medium purple text color */
     margin-bottom: 10px;
 }

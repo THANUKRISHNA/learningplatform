@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2>Your Courses</h2>
+  <div class="list-group mt-3">
+    {% if purchases %}
+      {% for purchase in purchases %}
+        <a href="{% url 'course_modules' course_id=purchase.course.id %}" class="list-group-item list-group-item-action">{{ purchase.course.title }}</a>
+      {% endfor %}
+    {% else %}
+      <p>No courses found.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

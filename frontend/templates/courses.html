@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
 <form method="post" action="{% url 'search' %}">
   {% csrf_token %}
   <label for="search_query">Search:</label>
@@ -24,11 +23,20 @@
         </div>
         <div class="card-footer course-card-footer">
           <h5 class="card-title course-card-title">{{ course.amount }}</h5>
-          <a href="{% url 'purchase_course' course_id=course.id %}" class="btn btn-primary course-btn">Enroll Now</a>
+          
         </div>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'purchase_course' course_id=course.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary course-btn">Enroll Now</button>
+        </form>
+        {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary course-btn">Enroll Now</a>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
   </div>
 </div>
+
 {% endblock %}
