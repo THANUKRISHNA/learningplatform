@@ -80,19 +80,19 @@
   .explore-section {
     text-align: center;
     padding: 20px 0;
-    margin-top: 4px; /* Adjust the margin-top value to add space */
-    color: #000000; /* Change the text color */
-    background-color: #3dee07; /* Change the background color */
+    margin-top: 4px; 
+    color: #000000; 
+    background-color: #44e213; 
   }
     
   .explore-section h2 {
     margin-bottom: 10px;
-    color: #050505; /* Change the text color */
+    color: #050505; 
   }
   
   .explore-section p {
     margin-bottom: 20px;
-    color: #050505; /* Change the text color */
+    color: #050505; 
   }
   
   
@@ -213,7 +213,7 @@
     color: #000;
     padding: 20px;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 100px;
   }
   
   
